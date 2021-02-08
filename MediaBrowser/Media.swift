@@ -91,6 +91,15 @@ open class Media: NSObject {
         emptyImage = (previewImageURL == nil) ? true : false
         self.photoURL = previewImageURL
     }
+    
+    /// init with video URL
+    public init(videoURL: URL, previewImage: UIImage? = nil) {
+        super.init()
+        self.videoURL = videoURL
+        isVideo = true
+        emptyImage = (previewImage == nil) ? true : false
+        self.image = previewImage
+    }
 
     //MARK: - Video
 
