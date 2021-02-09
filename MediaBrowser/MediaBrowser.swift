@@ -1447,8 +1447,6 @@ func floorcgf(x: CGFloat) -> CGFloat {
             //                }
             //            }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     func clearCurrentVideo() {
