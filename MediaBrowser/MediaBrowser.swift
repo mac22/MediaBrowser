@@ -290,7 +290,6 @@ func floorcgf(x: CGFloat) -> CGFloat {
         }
         
         hidesBottomBarWhenPushed = true
-        pagingScrollView.contentInsetAdjustmentBehavior = .never
         
         // Listen for Media falsetifications
         NotificationCenter.default.addObserver(
@@ -368,6 +367,7 @@ func floorcgf(x: CGFloat) -> CGFloat {
         pagingScrollView = UIScrollView(frame: pagingScrollViewFrame)
         pagingScrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         pagingScrollView.isPagingEnabled = true
+        pagingScrollView.contentInsetAdjustmentBehavior = .never
         pagingScrollView.delegate = self
         pagingScrollView.showsHorizontalScrollIndicator = false
         pagingScrollView.showsVerticalScrollIndicator = false
