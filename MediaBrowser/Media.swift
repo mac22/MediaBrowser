@@ -145,7 +145,7 @@ open class Media: NSObject {
     }
 
     //MARK: - Photo Protocol Methods
-    func loadUnderlyingImageAndNotify() {
+    open func loadUnderlyingImageAndNotify() {
         assert(Thread.current.isMainThread, "This method must be called on the main thread.")
         
         if loadingInProgress {
@@ -169,7 +169,7 @@ open class Media: NSObject {
     }
 
     // Set the underlyingImage
-    func performLoadUnderlyingImageAndNotify() {
+    open func performLoadUnderlyingImageAndNotify() {
         // Get underlying image
         if let img = image {
             // We have UIImage!
