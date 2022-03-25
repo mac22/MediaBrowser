@@ -377,12 +377,21 @@ func floorcgf(x: CGFloat) -> CGFloat {
         
         // Toolbar
         toolbar = UIToolbar(frame: frameForToolbar)
-        toolbar.tintColor = toolbarTextColor
-        toolbar.barTintColor = toolbarBarTintColor
-        toolbar.backgroundColor = toolbarBackgroundColor
-        toolbar.alpha = toolbarAlpha
         toolbar.barStyle = .black
         toolbar.isTranslucent = true
+        toolbar.tintColor = toolbarTextColor
+        toolbar.backgroundColor = toolbarBackgroundColor
+        toolbar.alpha = toolbarAlpha
+        if #available(iOS 13.0, *) {
+            let app = UIToolbarAppearance()
+            app.configureWithOpaqueBackground()
+            app.backgroundColor = toolbarBarTintColor
+            toolbar.compactAppearance = app
+            toolbar.standardAppearance = app
+        } else {
+            toolbar.isTranslucent = true
+            toolbar.barTintColor = toolbarBarTintColor
+        }
         toolbar.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
 
 
