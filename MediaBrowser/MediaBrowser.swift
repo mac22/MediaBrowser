@@ -367,7 +367,9 @@ func floorcgf(x: CGFloat) -> CGFloat {
         pagingScrollView = UIScrollView(frame: pagingScrollViewFrame)
         pagingScrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         pagingScrollView.isPagingEnabled = true
-        pagingScrollView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 11.0, *) {
+            pagingScrollView.contentInsetAdjustmentBehavior = .never
+        }
         pagingScrollView.delegate = self
         pagingScrollView.showsHorizontalScrollIndicator = false
         pagingScrollView.showsVerticalScrollIndicator = false
